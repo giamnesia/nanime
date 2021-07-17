@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+@import "mixin";
+* {
+  margin: 0;
+  padding: 0;
+}
+
+$blackColor: #070707;
+$whiteColor: #fffefe;
+$violetColor: #c020fa;
+$grayColor: #302d2d;
+
+body::-webkit-scrollbar {
+  width: 12px;
+}
+body::-webkit-scrollbar-track {
+  background-color: $blackColor;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: $whiteColor;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+.cards {
+  @include flexCenter(row);
+  margin: 1em;
+}
+.card {
+  margin: 1em;
+  width: 220px;
+  height: 400px;
+}
+.carddiv {
+  height: 400px;
+  background-color: $violetColor;
+  border-radius: 0.5em;
+}
+form {
+  margin: 1em;
+  input,
+  button {
+    padding: 10px;
+    outline: none;
+    border: none;
+    border-radius: 0.5em 0 0 0.5em;
+    color: $whiteColor;
+    background-color: $grayColor;
+  }
+  button {
+    background-color: $violetColor;
+    color: $whiteColor;
+    cursor: pointer;
+    border-radius: 0 0.5em 0.5em 0;
+  }
+}
+.img {
+  width: 220px;
+  height: 300px;
+  border-radius: 0.5em 0.5em 0 0;
+}
+.topcards {
+  @include flexCenter(row);
+}
+.cast {
+  @include flexCenter(row);
+}
+.characters {
+  .content {
+    margin: 0.5em;
+    border: 1px solid $violetColor;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    p {
+      font-size: 12px;
+      color: white;
+    }
+    .castimg {
+      width: 100px;
+      height: 150px;
+      margin: 1em;
+    }
+  }
+}
+.contentview {
+  color: White;
+
+  p {
+  }
+}
+.navbar {
+  height: 100vh;
+  .topcards {
+    background-color: black;
+  }
+}
+
+.title {
+  color: white;
+  font-size: 32px;
+  text-align: left;
+  padding: 0.3em 2em;
+}
+@media (max-width: 600px) {
+  div.ui.cards {
+    grid-template-columns: none;
+  }
+  .title {
+    text-align: center;
+  }
+}
