@@ -120,7 +120,8 @@ form button {
 }
 
 .singleview .opend {
-  margin: 3em;
+  margin: 2em;
+  padding: 0.5em;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 50% 50%;
