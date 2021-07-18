@@ -12,7 +12,7 @@ const SingleView = ({ title, img, rating, score, background, trailer, id,genres,
     fetch(CAST_URL)
       .then((res) => res.json())
       .then((data) => {
-        setCast(data.characters.slice(0, 8));
+        setCast(data.characters? data.characters.slice(0,8): ['Error']);
         setLoader(false);
       });
   }, [id]);
@@ -46,28 +46,34 @@ const SingleView = ({ title, img, rating, score, background, trailer, id,genres,
 
            <div className='description'>
             <div className="desc">
-            <h1>Synopsis <Icon name='write' size='tiny'/></h1>
-            <p >
+                  <h1>Synopsis <Icon name='write' size='tiny' /></h1>
+                  <p>Score:  {score ? score : "No score available"} <Icon name='star' color= 'yellow'
+                /></p>
+               <p className='bc'>
               {background ? background : "No Background Preview Available"}
                 </p>
-                  <h3>Score:  {score ? score : "No score available"} <Icon name='star' color= 'yellow'
-            /></h3>
+                  
               </div>
               <div className="trailer">
-            <h1>Trailer</h1>
-          <iframe
-            src={trailer ? trailer : "No trailer available"}
-            title={title}
-            frameborder="0"
-                   
-          ></iframe>
+                  <h1>Trailer <Icon name='video' size='small' /></h1>
+                  {
+                    trailer? ( <iframe
+                      src={trailer}
+                      title={title}
+                      frameborder="0"
+                      
+                    ></iframe>) : (
+                        <h3>No trailer</h3>
+                    )
+                  }
+               
             </div>
                 <div />
               </div>
               
         </div>
     
-        <h1>Cast</h1>
+        <h1 style={{marginTop:'2em'}}>Cast</h1>
 
           <div className="cast">
 
@@ -83,7 +89,7 @@ const SingleView = ({ title, img, rating, score, background, trailer, id,genres,
                   castimg={casts.image_url ? casts.image_url : "No casts"}
                   castname={casts.name ? casts.name : "No cast name"}
                   castrole={casts.role ? casts.role : "No role"}
-                  voice={casts.voice_actors.slice(0, 1)}
+                  voice={casts.voice_actors? casts.voice_actors.slice(0,1): ['Error']}
                 />
               ))
             )}

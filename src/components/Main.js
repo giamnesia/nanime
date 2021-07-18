@@ -32,6 +32,7 @@ const Main = () => {
       });
     setError("Anime not found");
   }, [anime]);
+
   const handleLoadingClick = () => {
     setLoading(true);
     setTimeout(() => {
@@ -82,7 +83,12 @@ const Main = () => {
       <h1 style={{ color: "white" }}>{results}</h1>
       {loading ? (
         <Dimmer active>
-          <Loader active inline="centered" content="Fetching Results" />
+          <Loader
+            active
+            inverted
+            inline="centered"
+            content="Fetching Results"
+          />
         </Dimmer>
       ) : (
         <div className="cards">
@@ -115,11 +121,13 @@ const Main = () => {
       )}
       <Icon
         name="angle up"
-        color="violet"
         className="arrow"
         size="large"
         onClick={scrollToTop}
-        style={{ display: visible ? "block" : "none" }}
+        style={{
+          display: visible ? "block" : "none",
+          color: "white",
+        }}
       />
     </div>
   );

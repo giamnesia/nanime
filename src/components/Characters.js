@@ -4,7 +4,6 @@ const Character = ({ castimg, castrole, castname, voice }) => {
     <div className="characters">
       {voice.map((person) => (
         <Popup
-          inverted
           trigger={
             <div className="content">
               <img className="castimg" src={castimg} />

@@ -6,11 +6,12 @@ const End = ({ song }) => {
     <div>
       <button
         style={{
-          width: "70%",
+          width: "80%",
           margin: "0.5em",
           padding: "1em",
-          backgroundColor: "#c020fa",
+          backgroundColor: "#231F2A",
           border: "none",
+          borderRadius: "0.5em",
           outline: "none",
         }}
       >
