@@ -113,7 +113,7 @@ const Navbar = () => {
       <Icon
         name="angle up"
         className="arrow"
-        size="large"
+        size="big"
         onClick={scrollToTop}
         style={{ display: visible ? "block" : "none", color: "white" }}
       />
