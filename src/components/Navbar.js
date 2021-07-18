@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from "react";
 import Top from "../components/Top";
-import { Header } from "semantic-ui-react";
+import { Icon } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -59,16 +59,43 @@ const Navbar = () => {
     }, 1000);
   };
 
+  //SCROLL
+  const [visible, setVisible] = useState(false);
+
+  const toggleVisible = () => {
+    const scrolled = document.documentElement.scrollTop;
+    if (scrolled > 300) {
+      setVisible(true);
+    } else if (scrolled <= 300) {
+      setVisible(false);
+    }
+  };
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  window.addEventListener("scroll", toggleVisible);
   return (
     <div className="navbar">
       <ToastContainer />
       <Link path="/">
         <p className="title">
-          N<span style={{ color: "violet" }}>Anime</span>
+          NANI<span style={{ color: "white" }}>me</span>
         </p>
       </Link>
-          <p style={{ color: "white", fontSize: '10px' }}>Data by
-         <a href="https://jikan.docs.apiary.io/" style={{ textDecoration: "none", color:'steelblue' }} > Jikan API 💖</a></p>
+      <p style={{ color: "white", fontSize: "10px" }}>
+        Data by
+        <a
+          href="https://jikan.docs.apiary.io/"
+          style={{ textDecoration: "none", color: "steelblue" }}
+        >
+          {" "}
+          Jikan API 💖
+        </a>
+      </p>
       <form action="" onSubmit={handleform}>
         <input
           type="text"
@@ -84,6 +111,14 @@ const Navbar = () => {
         </Link>
       </form>
       <Top />
+      <Icon
+        name="angle up"
+        color="violet"
+        className="arrow"
+        size="large"
+        onClick={scrollToTop}
+        style={{ display: visible ? "block" : "none" }}
+      />
     </div>
   );
 };

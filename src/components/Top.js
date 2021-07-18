@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from "react";
-import { Card, Placeholder, Popup } from "semantic-ui-react";
+import { Card, Icon, Popup } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 const TOP_URL = "https://api.jikan.moe/v3/top/anime/1/upcoming";
@@ -16,6 +16,8 @@ const Top = () => {
   useEffect(() => {
     result(TOP_URL);
   }, []);
+
+ 
 
   return (
     <>

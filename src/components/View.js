@@ -54,7 +54,7 @@ const View = () => {
     <div>
       <Link to="/">
         <p className="title">
-          N<span style={{ color: "violet" }}>Anime</span>
+          NANI<span style={{ color: "white" }}>me</span>
         </p>
       </Link>
       <form action="" onSubmit={handleform}>
@@ -81,9 +81,20 @@ const View = () => {
         rating={anime.rating}
         score={anime.score}
         episodes={anime.episodes}
+        popularity={anime.popularity}
         background={anime.background}
         trailer={anime.trailer_url}
-        genres={anime.genres}
+        genres={anime.genres ? anime.genres : ["No genre"]}
+        op={
+          anime.opening_themes
+            ? anime.opening_themes.slice(0, 5)
+            : ["No opening themes"]
+        }
+        end={
+          anime.ending_themes
+            ? anime.ending_themes.slice(0, 5)
+            : ["No ending themes"]
+        }
       />
     </div>
   );
