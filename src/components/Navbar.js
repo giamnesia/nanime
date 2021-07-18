@@ -25,7 +25,6 @@ const Navbar = () => {
     response
       .json()
       .then((data) => {
-        console.log(data.results);
         if (response.ok) {
           setDisplay(data.results.slice(0, 20));
           setResults("Results for " + `"${search}"`);

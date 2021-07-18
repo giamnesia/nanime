@@ -76,6 +76,7 @@ const SingleView = ({ title, img, rating, score, background, trailer, id,genres,
                 <Placeholder.Image />
               </Placeholder>
               ) : (
+                
               cast.map((casts, id) => (
                 <Characters
                   key={id}

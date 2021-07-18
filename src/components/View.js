@@ -24,7 +24,6 @@ const View = () => {
     response
       .json()
       .then((data) => {
-        console.log(data.results);
         if (response.ok) {
           setDisplay(data.results.slice(0, 20));
           setResults("Results for " + `"${search}"`);
@@ -45,7 +44,6 @@ const View = () => {
     fetch(ANIME_URL)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setAnime(data);
       });
   }, [id]);
