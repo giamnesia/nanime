@@ -84,6 +84,7 @@ const Navbar = () => {
         <a
           href="https://jikan.docs.apiary.io/"
           target="_blank"
+          rel="noreferrer"
           style={{ textDecoration: "none", color: "steelblue" }}
         >
           {" "}

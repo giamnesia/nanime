@@ -4,10 +4,9 @@ import SingleView from "../components/SingleView";
 const View = () => {
   const [anime, setAnime] = useState([]);
   const { id } = useParams();
-  const ANIME_URL = `https://api.jikan.moe/v3/anime/${id}`;
 
   useEffect(() => {
-    fetch(ANIME_URL)
+    fetch(`https://api.jikan.moe/v3/anime/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setAnime(data);

@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Card, Dimmer, Loader, Popup, Icon } from "semantic-ui-react";
+import { Card, Loader, Popup } from "semantic-ui-react";
 import { Link, useParams } from "react-router-dom";
-
-export const IdContext = React.createContext();
 
 const Main = () => {
   const { anime } = useParams();
@@ -26,7 +24,6 @@ const Main = () => {
       .finally(() => {
         setLoading(false);
       });
-    setError("Anime not found");
   }, [anime]);
 
   return (

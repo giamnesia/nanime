@@ -2,20 +2,20 @@ import { React, useState, useEffect } from "react";
 import { Card, Popup, Loader } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
-const TOP_URL = "https://api.jikan.moe/v3/top/anime/1/upcoming";
-
 const Top = () => {
   const [display, setDisplay] = useState([]);
   const [loader, setLoader] = useState(true);
-  const result = async (url) => {
-    const response = await fetch(url);
+  const result = async () => {
+    const response = await fetch(
+      "https://api.jikan.moe/v3/top/anime/1/upcoming"
+    );
     response.json().then((data) => {
       setLoader(false);
       setDisplay(data.top.slice(0, 5));
     });
   };
   useEffect(() => {
-    result(TOP_URL);
+    result();
   }, []);
 
   return (

@@ -23,9 +23,8 @@ const SingleView = ({
   const [loader, setLoader] = useState(true);
   const [cast, setCast] = useState([]);
 
-  const CAST_URL = `https://api.jikan.moe/v3/anime/${id}/characters_staff`;
   useEffect(() => {
-    fetch(CAST_URL)
+    fetch(`https://api.jikan.moe/v3/anime/${id}/characters_staff`)
       .then((res) => res.json())
       .then((data) => {
         setCast(data.characters ? data.characters.slice(0, 8) : ["Error"]);

@@ -1,5 +1,5 @@
 import React from "react";
-import { Segment, Header, Divider } from "semantic-ui-react";
+import { Header } from "semantic-ui-react";
 const Op = ({ song }) => {
   return (
     <div>
