@@ -1,9 +1,9 @@
 import { React, useState, useEffect } from "react";
-import Top from "../components/Top";
 import { Icon } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
 const Navbar = () => {
   const [search, setSearch] = useState();
   const [display, setDisplay] = useState([]);
@@ -28,18 +28,13 @@ const Navbar = () => {
         if (response.ok) {
           setDisplay(data.results.slice(0, 20));
           setResults("Results for " + `"${search}"`);
-          setError("");
         }
         if (!response.ok) {
           throw Error("Error");
         }
-        if (searchlength < 3) {
-          setError("Input 3 characters or above");
-          setResults("");
-        }
+        
       })
       .catch(error);
-    setError("Anime not found");
   };
   const test = () =>
     toast.dark("Welcome to Nanime - Made with ❤ by Gia", {
@@ -80,7 +75,7 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <ToastContainer />
-      <Link path="/">
+      <Link to="/">
         <p className="title">
           NANI<span style={{ color: "white" }}>me</span>
         </p>
@@ -89,6 +84,7 @@ const Navbar = () => {
         Data by
         <a
           href="https://jikan.docs.apiary.io/"
+          target='_blank'
           style={{ textDecoration: "none", color: "steelblue" }}
         >
           {" "}
@@ -109,7 +105,6 @@ const Navbar = () => {
           </button>
         </Link>
       </form>
-      <Top />
       <Icon
         name="angle up"
         className="arrow"

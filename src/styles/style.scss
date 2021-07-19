@@ -10,7 +10,7 @@
 $blackColor: #070707;
 $whiteColor: #fffefe;
 $violetColor: #c020fa;
-$grayColor: #302d2d;
+$grayColor: #231f2a;
 
 body::-webkit-scrollbar {
   width: 12px;
@@ -23,6 +23,7 @@ body::-webkit-scrollbar-thumb {
 }
 body {
   font-family: "Poppins", sans-serif;
+  background-color: $blackColor;
 }
 .cards {
   @include flexCenter(row);
@@ -32,7 +33,9 @@ body {
   margin: 1em;
   width: 220px;
   height: 400px;
+  -webkit-tap-highlight-color: transparent;
   .carddiv {
+    -webkit-tap-highlight-color: transparent;
     height: 400px;
     background-color: $violetColor;
     border-radius: 0.5em;
@@ -51,6 +54,7 @@ form {
     background-color: $grayColor;
   }
   button {
+    -webkit-tap-highlight-color: transparent;
     background-color: $violetColor;
     color: $whiteColor;
     cursor: pointer;
@@ -66,12 +70,6 @@ form {
   @include flexCenter(row);
 }
 
-.navbar {
-  height: 100vh;
-  .topcards {
-    background-color: black;
-  }
-}
 .arrow {
   position: fixed;
   bottom: 30px;
@@ -113,8 +111,6 @@ form {
     margin: 1em;
   }
   .description {
-    display: grid;
-    grid-template-columns: 50% 50%;
     margin-top: 2em;
     .desc {
       margin: 2em;
@@ -125,20 +121,32 @@ form {
         border-radius: 0.5em;
       }
     }
-    .trailer {
-      iframe {
-        height: 200px;
-        margin-top: 3em;
+  }
+
+  .section {
+    @include flexCenter(row);
+    h1 {
+      margin: 0.5em;
+    }
+    .otherdesc {
+      margin: 1em;
+      .descs {
+        width: 300px;
+        background-color: $grayColor;
+        padding: 1em;
+        border-radius: 0.5em;
       }
+    }
+    .trailer {
+      margin: 1em;
+      padding: 1em;
     }
   }
   .cast {
     @include flexCenter(row);
     margin-top: 2em;
   }
-  .trailer {
-    padding: 1em;
-  }
+
   .characters {
     .content {
       margin: 0.5em;
@@ -161,7 +169,9 @@ form {
   color: violet;
   font-size: 32px;
   text-align: left;
-  padding: 0.3em 2em;
+  padding: 0.5em 2em;
+  margin: 0.5em;
+  -webkit-tap-highlight-color: transparent;
 }
 @media (max-width: 600px) {
   div.ui.cards {
@@ -174,7 +184,7 @@ form {
     .opend {
       grid-template-columns: none;
     }
-    .description {
+    .section {
       grid-template-columns: none;
     }
   }

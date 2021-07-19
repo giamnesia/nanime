@@ -19,6 +19,7 @@ body::-webkit-scrollbar-thumb {
 
 body {
   font-family: "Poppins", sans-serif;
+  background-color: #070707;
 }
 
 .cards {
@@ -44,9 +45,11 @@ body {
   margin: 1em;
   width: 220px;
   height: 400px;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .card .carddiv {
+  -webkit-tap-highlight-color: transparent;
   height: 400px;
   background-color: #c020fa;
   border-radius: 0.5em;
@@ -63,10 +66,11 @@ form button {
   border: none;
   border-radius: 0.5em 0 0 0.5em;
   color: #fffefe;
-  background-color: #302d2d;
+  background-color: #231f2a;
 }
 
 form button {
+  -webkit-tap-highlight-color: transparent;
   background-color: #c020fa;
   color: #fffefe;
   cursor: pointer;
@@ -95,14 +99,6 @@ form button {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-}
-
-.navbar {
-  height: 100vh;
-}
-
-.navbar .topcards {
-  background-color: black;
 }
 
 .arrow {
@@ -151,10 +147,6 @@ form button {
 }
 
 .singleview .description {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 50% 50%;
-      grid-template-columns: 50% 50%;
   margin-top: 2em;
 }
 
@@ -169,9 +161,42 @@ form button {
   border-radius: 0.5em;
 }
 
-.singleview .description .trailer iframe {
-  height: 200px;
-  margin-top: 3em;
+.singleview .section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.singleview .section h1 {
+  margin: 0.5em;
+}
+
+.singleview .section .otherdesc {
+  margin: 1em;
+}
+
+.singleview .section .otherdesc .descs {
+  width: 300px;
+  background-color: #231f2a;
+  padding: 1em;
+  border-radius: 0.5em;
+}
+
+.singleview .section .trailer {
+  margin: 1em;
+  padding: 1em;
 }
 
 .singleview .cast {
@@ -191,10 +216,6 @@ form button {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin-top: 2em;
-}
-
-.singleview .trailer {
-  padding: 1em;
 }
 
 .singleview .characters .content {
@@ -219,7 +240,9 @@ form button {
   color: violet;
   font-size: 32px;
   text-align: left;
-  padding: 0.3em 2em;
+  padding: 0.5em 2em;
+  margin: 0.5em;
+  -webkit-tap-highlight-color: transparent;
 }
 
 @media (max-width: 600px) {
@@ -234,7 +257,7 @@ form button {
     -ms-grid-columns: none;
         grid-template-columns: none;
   }
-  .singleview .description {
+  .singleview .section {
     -ms-grid-columns: none;
         grid-template-columns: none;
   }

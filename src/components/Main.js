@@ -7,14 +7,10 @@ export const IdContext = React.createContext();
 const Main = () => {
   const { anime } = useParams();
   const [loading, setLoading] = useState(false);
-  const [search, setSearch] = useState();
   const [display, setDisplay] = useState([]);
   const [results, setResults] = useState("");
   const [error, setError] = useState("");
 
-  const handleSearch = (e) => {
-    setSearch(e.target.value);
-  };
   useEffect(() => {
     setLoading(true);
     fetch(
@@ -33,12 +29,6 @@ const Main = () => {
     setError("Anime not found");
   }, [anime]);
 
-  const handleLoadingClick = () => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-  };
   //SCROLL
   const [visible, setVisible] = useState(false);
 
@@ -61,62 +51,46 @@ const Main = () => {
 
   return (
     <div>
-      <Link to="/">
-        <p className="title">
-          NANI<span style={{ color: "white" }}>me</span>
-        </p>
-      </Link>
-      <form>
-        <input
-          type="text"
-          placeholder="Search"
-          value={search}
-          onInput={handleSearch}
-          required
-        />
-        <Link to={search ? `/main/${search}` : "/main/Wrong Input"}>
-          <button type="submit" loading={loading} onClick={handleLoadingClick}>
-            Search
-          </button>
-        </Link>
-      </form>
-      <h1 style={{ color: "white" }}>{results}</h1>
+      <h1 style={{ color: "white", margin: "0.8em" }}>{results}</h1>
       {loading ? (
-        <Dimmer active>
-          <Loader
-            active
-            inverted
-            inline="centered"
-            content="Fetching Results"
-          />
-        </Dimmer>
+        <div style={{ height: "100vh" }}>
+          <Loader active inverted inline="centered" content="Fetching Data" />
+        </div>
       ) : (
         <div className="cards">
-          {display.map((anime) => (
-            <Link to={`/view/${anime.mal_id}`}>
-              <div className="card">
-                <div className="carddiv">
-                  <Popup
-                    header={`${"Rated: " + anime.rated}`}
-                    trigger={<img className="img" src={anime.image_url}></img>}
-                  />
-                  <Card.Content>
-                    <>
-                      <Popup
-                        header={`${"Ratings: " + anime.score}`}
-                        inverted
-                        trigger={
-                          <h4 style={{ color: "white", padding: "0.8em" }}>
-                            {anime.title}
-                          </h4>
-                        }
-                      />
-                    </>
-                  </Card.Content>
+          {display ? (
+            display.map((anime) => (
+              <Link to={`/view/${anime.mal_id}`}>
+                <div className="card">
+                  <div className="carddiv">
+                    <Popup
+                      header={`${"Rated: " + anime.rated}`}
+                      trigger={
+                        <img className="img" src={anime.image_url}></img>
+                      }
+                    />
+                    <Card.Content>
+                      <>
+                        <Popup
+                          header={`${"Ratings: " + anime.score}`}
+                          inverted
+                          trigger={
+                            <h4 style={{ color: "white", padding: "0.8em" }}>
+                              {anime.title}
+                            </h4>
+                          }
+                        />
+                      </>
+                    </Card.Content>
+                  </div>
                 </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            ))
+          ) : (
+            <h3 style={{ color: "white", height: "75vh", margin: "1em" }}>
+              No results 😢 Please input 3 characters
+            </h3>
+          )}
         </div>
       )}
       <Icon

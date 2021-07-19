@@ -1,15 +1,16 @@
 import { React, useState, useEffect } from "react";
-import { Card, Popup } from "semantic-ui-react";
+import { Card, Popup, Loader } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 const TOP_URL = "https://api.jikan.moe/v3/top/anime/1/upcoming";
 
 const Top = () => {
   const [display, setDisplay] = useState([]);
-
+  const [loader, setLoader] = useState(true);
   const result = async (url) => {
     const response = await fetch(url);
     response.json().then((data) => {
+      setLoader(false);
       setDisplay(data.top.slice(0, 5));
     });
   };
@@ -18,38 +19,46 @@ const Top = () => {
   }, []);
 
   return (
-    <>
-      <h1 style={{ color: "white" }}>Top Anime 2021</h1>
+    <div style={{ padding: "1em" }}>
+      <h1 style={{ color: "white" }}>Upcoming Anime 2021</h1>
       <div className="topcards">
-        {display.map((anime) => (
-          <Link to={`/view/${anime.mal_id}`}>
-            <div className="card">
-              <div className="carddiv" inverted>
-                <>
-                  <Popup
-                    header={`${"Rank: " + anime.rank}`}
-                    trigger={<img className="img" src={anime.image_url}></img>}
-                  />
-                </>
-                <Card.Content>
+        {loader ? (
+          <div style={{ height: "100vh" }}>
+            <Loader active inverted inline="centered" content="Loading" />
+          </div>
+        ) : (
+          display.map((anime) => (
+            <Link to={`/view/${anime.mal_id}`}>
+              <div className="card">
+                <div className="carddiv" inverted>
                   <>
                     <Popup
-                      header={`${"Ratings: " + anime.score}`}
-                      inverted
+                      header={`${"Rank: " + anime.rank}`}
                       trigger={
-                        <h4 style={{ color: "white", padding: "0.8em" }}>
-                          {anime.title}
-                        </h4>
+                        <img className="img" src={anime.image_url}></img>
                       }
                     />
                   </>
-                </Card.Content>
+                  <Card.Content>
+                    <>
+                      <Popup
+                        header={`${"Ratings: " + anime.score}`}
+                        inverted
+                        trigger={
+                          <h4 style={{ color: "white", padding: "0.8em" }}>
+                            {anime.title}
+                          </h4>
+                        }
+                      />
+                    </>
+                  </Card.Content>
+                </div>
               </div>
-            </div>
-          </Link>
-        ))}
+            </Link>
+          ))
+        )}
       </div>
-    </>
+    </div>
   );
 };
 
