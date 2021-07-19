@@ -21,7 +21,6 @@ const Navbar = () => {
         search +
         "&order_by=title&sort=asc"
     );
-    const searchlength = search.length;
     response
       .json()
       .then((data) => {
@@ -32,7 +31,6 @@ const Navbar = () => {
         if (!response.ok) {
           throw Error("Error");
         }
-        
       })
       .catch(error);
   };
@@ -48,6 +46,7 @@ const Navbar = () => {
 
   const handleLoadingClick = () => {
     setLoading(false);
+    setSearch("");
     setTimeout(() => {
       setLoading(false);
     }, 1000);
@@ -84,7 +83,7 @@ const Navbar = () => {
         Data by
         <a
           href="https://jikan.docs.apiary.io/"
-          target='_blank'
+          target="_blank"
           style={{ textDecoration: "none", color: "steelblue" }}
         >
           {" "}

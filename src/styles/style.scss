@@ -6,7 +6,6 @@
   padding: 0;
   font-family: "Poppins", sans-serif;
 }
-
 $blackColor: #070707;
 $whiteColor: #fffefe;
 $violetColor: #c020fa;
@@ -21,9 +20,9 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background-color: $whiteColor;
 }
-body {
+body,
+html {
   font-family: "Poppins", sans-serif;
-  background-color: $blackColor;
 }
 .cards {
   @include flexCenter(row);
@@ -88,8 +87,7 @@ form {
   .opend {
     margin: 2em;
     padding: 0.5em;
-    display: grid;
-    grid-template-columns: 50% 50%;
+    @include grid;
   }
   img {
     width: 180px;

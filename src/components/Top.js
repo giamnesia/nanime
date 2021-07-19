@@ -19,11 +19,11 @@ const Top = () => {
   }, []);
 
   return (
-    <div style={{ padding: "1em" }}>
+    <div>
       <h1 style={{ color: "white" }}>Upcoming Anime 2021</h1>
       <div className="topcards">
         {loader ? (
-          <div style={{ height: "100vh" }}>
+          <div>
             <Loader active inverted inline="centered" content="Loading" />
           </div>
         ) : (

@@ -10,7 +10,6 @@ const View = () => {
     fetch(ANIME_URL)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setAnime(data);
       });
   }, [id]);
