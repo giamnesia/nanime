@@ -20,7 +20,7 @@ const Top = () => {
 
   return (
     <div>
-      <h1 style={{ color: "white" }}>Upcoming Anime 2021</h1>
+      <h2 style={{ color: "white", margin: "0.8em" }}>Upcoming Anime 2021</h2>
       <div className="topcards">
         {loader ? (
           <div>

@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-
 @import "mixin";
 * {
   margin: 0;
@@ -111,11 +110,12 @@ form {
   .description {
     margin-top: 2em;
     .desc {
-      margin: 2em;
+      margin: 1em;
       .bc {
+        width: 70%;
+        margin: auto;
         background-color: #231f2a;
         padding: 1em;
-        line-height: 1.5em;
         border-radius: 0.5em;
       }
     }
@@ -149,7 +149,7 @@ form {
     .content {
       margin: 0.5em;
       border: 1px solid $violetColor;
-      padding: 0.5em;
+      padding: 0.3em;
       border-radius: 0.5em;
       p {
         font-size: 12px;
@@ -191,6 +191,15 @@ form {
     }
     .section {
       grid-template-columns: none;
+    }
+  }
+  .singleview {
+    .description {
+      .desc {
+        .bc {
+          width: 100%;
+        }
+      }
     }
   }
 

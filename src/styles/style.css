@@ -151,13 +151,14 @@ form button {
 }
 
 .singleview .description .desc {
-  margin: 2em;
+  margin: 1em;
 }
 
 .singleview .description .desc .bc {
+  width: 70%;
+  margin: auto;
   background-color: #231f2a;
   padding: 1em;
-  line-height: 1.5em;
   border-radius: 0.5em;
 }
 
@@ -221,7 +222,7 @@ form button {
 .singleview .characters .content {
   margin: 0.5em;
   border: 1px solid #c020fa;
-  padding: 0.5em;
+  padding: 0.3em;
   border-radius: 0.5em;
 }
 
@@ -279,6 +280,9 @@ form button {
   .singleview .section {
     -ms-grid-columns: none;
         grid-template-columns: none;
+  }
+  .singleview .description .desc .bc {
+    width: 100%;
   }
   .cards {
     display: -webkit-box;

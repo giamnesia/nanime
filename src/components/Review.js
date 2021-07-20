@@ -31,8 +31,8 @@ const Review = ({ id }) => {
       <Comment.Group minimal size='small' collapsed={collapsed} >
         {
             display.map(item => (
-              <Comment style={{border:'2px solid white', margin:'1em', borderRadius:'0.5em'}}  >
-                <Comment.Avatar as='a' href={item.reviewer.url} target='_blank' src={item.reviewer.image_url} style={{width:'100px', height:'100px',  margin:'1em'}}/>
+              <Comment style={{border:'1px solid white', margin:'1em', borderRadius:'0.5em'}}  >
+                <Comment.Avatar as='a' href={item.reviewer.url} target='_blank' src={item.reviewer.image_url} style={{width:'100px', height:'120px',  margin:'1em'}}/>
                 <Comment.Content style={{ margin:'1.5em'}}>
                   <Comment.Author as='a' href={item.reviewer.url} target='_blank' style={{color: "white" , margin:'0.5em'}}>@{item.reviewer.username}</Comment.Author>
                 <Comment.Metadata>

@@ -8,7 +8,16 @@ const Character = ({ castimg, castrole, castname, voice }) => {
             <div className="content">
               <img className="castimg" src={castimg} />
               <p>{castname}</p>
-              <p>Role: {castrole}</p>
+              <p
+                style={{
+                  backgroundColor: "#c020fa",
+                  borderRadius: "0.3em",
+                  margin: "0.5em",
+                  padding: "0.1em",
+                }}
+              >
+                Role: {castrole}
+              </p>
             </div>
           }
         >
