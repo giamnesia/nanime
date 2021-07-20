@@ -163,6 +163,13 @@ form {
     }
   }
 }
+
+//Comments
+.comment {
+  color: $whiteColor;
+  @include flexCenter(column);
+}
+
 .title {
   color: violet;
   font-size: 32px;

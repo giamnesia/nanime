@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import SingleView from "../components/SingleView";
+import Review from "./Review";
 const View = () => {
   const [anime, setAnime] = useState([]);
   const { id } = useParams();
@@ -42,6 +43,7 @@ const View = () => {
             : ["No ending themes"]
         }
       />
+      <Review id={id} />
     </div>
   );
 };
