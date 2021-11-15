@@ -11,8 +11,7 @@ const Review = ({ id }) => {
     fetch(`https://api.jikan.moe/v3/anime/${id}/reviews`)
       .then((res) => res.json())
       .then((data) => {
-        setDisplay(data.reviews.slice(0,5));
-        console.log(data.reviews.slice(0, 5));
+        setDisplay(data.reviews? data.reviews.slice(0,5): ['Error']);
       });
   }, [id]);
 
@@ -27,11 +26,11 @@ const Review = ({ id }) => {
           onChange={handlecheck}
         />
       </Segment>
-
-      <Comment.Group minimal size='small' collapsed={collapsed} >
+      
+      <Comment.Group minimal size='small' collapsed={collapsed} className='review' >
         {
             display.map(item => (
-              <Comment style={{border:'1px solid white', margin:'1em', borderRadius:'0.5em'}}  >
+              <Comment style={{ border: '1px solid white', margin: '1em', borderRadius: '0.5em'}}  >
                 <Comment.Avatar as='a' href={item.reviewer.url} target='_blank' src={item.reviewer.image_url} style={{width:'100px', height:'120px',  margin:'1em'}}/>
                 <Comment.Content style={{ margin:'1.5em'}}>
                   <Comment.Author as='a' href={item.reviewer.url} target='_blank' style={{color: "white" , margin:'0.5em'}}>@{item.reviewer.username}</Comment.Author>

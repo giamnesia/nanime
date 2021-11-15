@@ -22,7 +22,7 @@ const Character = ({ castimg, castrole, castname, voice }) => {
           }
         >
           <h4>{person.name}</h4>
-          <img src={person.image_url} />
+          <img style={{ width: "50px" }} src={person.image_url} />
         </Popup>
       ))}
     </div>

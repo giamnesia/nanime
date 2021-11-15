@@ -1,117 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  font-family: "Poppins", sans-serif;
-}
-
-body::-webkit-scrollbar {
-  width: 12px;
-}
-
-body::-webkit-scrollbar-track {
-  background-color: #070707;
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: #fffefe;
-}
-
-body,
-html {
-  font-family: "Poppins", sans-serif;
-}
-
-.cards {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin: 1em;
-}
-
-.card {
-  margin: 1em;
-  width: 220px;
-  height: 400px;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.card .carddiv {
-  -webkit-tap-highlight-color: transparent;
-  height: 400px;
-  background-color: #c020fa;
-  border-radius: 0.5em;
-}
-
-form {
-  margin: 1em;
-}
-
-form input,
-form button {
-  padding: 10px;
-  outline: none;
-  border: none;
-  border-radius: 0.5em 0 0 0.5em;
-  color: #fffefe;
-  background-color: #231f2a;
-}
-
-form button {
-  -webkit-tap-highlight-color: transparent;
-  background-color: #c020fa;
-  color: #fffefe;
-  cursor: pointer;
-  border-radius: 0 0.5em 0.5em 0;
-}
-
-.img {
-  width: 220px;
-  height: 300px;
-  border-radius: 0.5em 0.5em 0 0;
-}
-
-.topcards {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.arrow {
-  position: fixed;
-  bottom: 30px;
-  right: 7px;
-  z-index: 2;
-  padding: 1em;
-  border-radius: 1em;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-}
-
 .singleview {
   color: White;
   margin-top: 3em;
@@ -235,6 +122,119 @@ form button {
   width: 100px;
   height: 150px;
   margin: 1em;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #070707;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #fffefe;
+}
+
+body,
+html {
+  font-family: "Poppins", sans-serif;
+}
+
+.cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 1em;
+}
+
+.card {
+  margin: 1em;
+  width: 220px;
+  height: 400px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.card .carddiv {
+  -webkit-tap-highlight-color: transparent;
+  height: 400px;
+  background-color: #c020fa;
+  border-radius: 0.5em;
+}
+
+form {
+  margin: 1em;
+}
+
+form input,
+form button {
+  padding: 10px;
+  outline: none;
+  border: none;
+  border-radius: 0.5em 0 0 0.5em;
+  color: #fffefe;
+  background-color: #231f2a;
+}
+
+form button {
+  -webkit-tap-highlight-color: transparent;
+  background-color: #c020fa;
+  color: #fffefe;
+  cursor: pointer;
+  border-radius: 0 0.5em 0.5em 0;
+}
+
+.img {
+  width: 220px;
+  height: 300px;
+  border-radius: 0.5em 0.5em 0 0;
+}
+
+.topcards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.arrow {
+  position: fixed;
+  bottom: 30px;
+  right: 7px;
+  z-index: 2;
+  padding: 1em;
+  border-radius: 1em;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .comment {

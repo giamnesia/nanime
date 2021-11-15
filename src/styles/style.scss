@@ -1,14 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import "color";
 @import "mixin";
+@import "singleview";
 * {
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
 }
-$blackColor: #070707;
-$whiteColor: #fffefe;
-$violetColor: #c020fa;
-$grayColor: #231f2a;
 
 body::-webkit-scrollbar {
   width: 12px;
@@ -77,91 +75,6 @@ form {
   border-radius: 1em;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
-}
-
-//SINGLEVIEW
-.singleview {
-  color: White;
-  margin-top: 3em;
-  .opend {
-    margin: 2em;
-    padding: 0.5em;
-    @include grid;
-  }
-  img {
-    width: 180px;
-    height: 250px;
-    border-radius: 0.5em;
-  }
-  .genre {
-    button {
-      padding: 0.5em;
-      background-color: transparent;
-      -webkit-tap-highlight-color: transparent;
-      border: 1px solid $violetColor;
-      color: white;
-      border-radius: 0.5em;
-      margin: 0.3em;
-    }
-  }
-  .contentview {
-    margin: 1em;
-  }
-  .description {
-    margin-top: 2em;
-    .desc {
-      margin: 1em;
-      .bc {
-        width: 70%;
-        margin: auto;
-        background-color: #231f2a;
-        padding: 1em;
-        border-radius: 0.5em;
-      }
-    }
-  }
-
-  .section {
-    @include flexCenter(row);
-    h1 {
-      margin: 0.5em;
-    }
-    .otherdesc {
-      margin: 1em;
-      .descs {
-        width: 300px;
-        background-color: $grayColor;
-        padding: 1em;
-        border-radius: 0.5em;
-      }
-    }
-    .trailer {
-      margin: 1em;
-      padding: 1em;
-    }
-  }
-  .cast {
-    @include flexCenter(row);
-    margin-top: 2em;
-  }
-
-  .characters {
-    .content {
-      margin: 0.5em;
-      border: 1px solid $violetColor;
-      padding: 0.3em;
-      border-radius: 0.5em;
-      p {
-        font-size: 12px;
-        color: white;
-      }
-      .castimg {
-        width: 100px;
-        height: 150px;
-        margin: 1em;
-      }
-    }
-  }
 }
 
 //Comments

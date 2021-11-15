@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import SingleView from "../components/SingleView";
 import Review from "./Review";
 const View = () => {
