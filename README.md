@@ -1,7 +1,7 @@
 # NANIME 
 
-[![GitHub forks](https://img.shields.io/github/forks/giamnesia/movie-hunt)](https://github.com/giamnesia/nanime/network)
-[![GitHub stars](https://img.shields.io/github/stars/giamnesia/movie-hunt)](https://github.com/giamnesia/nanime/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/giamnesia/nanime)](https://github.com/giamnesia/nanime/network)
+[![GitHub stars](https://img.shields.io/github/stars/giamnesia/nanime)](https://github.com/giamnesia/nanime/stargazers)
 > Progressive Web Application
 
  A Database wherein you can search different Anime
