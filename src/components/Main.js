@@ -1,34 +1,61 @@
 import React, { useState, useEffect } from "react";
 import { Card, Loader, Popup } from "semantic-ui-react";
 import { Link, useParams } from "react-router-dom";
-
+import {
+  IoIosArrowDroprightCircle,
+  IoIosArrowDropleftCircle,
+} from "react-icons/io";
 const Main = () => {
   const { anime } = useParams();
   const [loading, setLoading] = useState(false);
   const [display, setDisplay] = useState([]);
   const [results, setResults] = useState("");
   const [error, setError] = useState("");
-
+  const [page, setPage] = useState(1);
+  const [total, setTotal] = useState();
   useEffect(() => {
     setLoading(true);
     fetch(
-      `https://api.jikan.moe/v3/search/anime?q=${anime}&order_by=title&sort=asc&limit=20`
+      `https://api.jikan.moe/v3/search/anime?q=${anime}&order_by=title&sort=asc&page=${page}`
     )
       .then((res) => res.json())
       .then((data) => {
+        document.title = `NANIME | ${anime}`;
         setResults("Results for " + `"${anime}"`);
         setDisplay(data.results);
+        setTotal(data.last_page);
+        console.log(data);
         setError("");
-      })
-      .catch(error)
-      .finally(() => {
         setLoading(false);
       });
-  }, [anime]);
+  }, [anime, page]);
 
   return (
     <div>
       <h1 style={{ color: "white", margin: "0.8em" }}>{results}</h1>
+      <div className="btn-div">
+        <IoIosArrowDropleftCircle
+          onClick={() => {
+            if (page > 1) {
+              setPage(page - 1);
+            }
+          }}
+          className="prev-next"
+          size="2em"
+        />
+        <p style={{ color: "white", margin: "0.8em" }}>
+          {page} / {total}
+        </p>
+        <IoIosArrowDroprightCircle
+          onClick={() => {
+            if (page < total) {
+              setPage(page + 1);
+            }
+          }}
+          className="prev-next"
+          size="2em"
+        />
+      </div>
       {loading ? (
         <div>
           <Loader active inverted inline="centered" content="Fetching Data" />

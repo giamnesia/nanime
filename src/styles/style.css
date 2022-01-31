@@ -168,14 +168,14 @@ html {
 
 .card {
   margin: 1em;
-  width: 220px;
-  height: 400px;
+  width: 200px;
+  height: 350px;
   -webkit-tap-highlight-color: transparent;
 }
 
 .card .carddiv {
   -webkit-tap-highlight-color: transparent;
-  height: 400px;
+  height: 350px;
   background-color: #c020fa;
   border-radius: 0.5em;
 }
@@ -203,8 +203,8 @@ form button {
 }
 
 .img {
-  width: 220px;
-  height: 300px;
+  width: 200px;
+  height: 250px;
   border-radius: 0.5em 0.5em 0 0;
 }
 
@@ -232,6 +232,8 @@ form button {
   right: 7px;
   z-index: 2;
   padding: 1em;
+  -webkit-animation: bounce 2s infinite;
+          animation: bounce 2s infinite;
   border-radius: 1em;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
@@ -319,5 +321,27 @@ form button {
   .card .carddiv h4 {
     font-size: 13px;
   }
+}
+
+.btn-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.prev-next {
+  color: #c020fa;
 }
 /*# sourceMappingURL=style.css.map */

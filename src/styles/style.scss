@@ -27,12 +27,12 @@ html {
 }
 .card {
   margin: 1em;
-  width: 220px;
-  height: 400px;
+  width: 200px;
+  height: 350px;
   -webkit-tap-highlight-color: transparent;
   .carddiv {
     -webkit-tap-highlight-color: transparent;
-    height: 400px;
+    height: 350px;
     background-color: $violetColor;
     border-radius: 0.5em;
   }
@@ -58,8 +58,8 @@ form {
   }
 }
 .img {
-  width: 220px;
-  height: 300px;
+  width: 200px;
+  height: 250px;
   border-radius: 0.5em 0.5em 0 0;
 }
 .topcards {
@@ -72,6 +72,7 @@ form {
   right: 7px;
   z-index: 2;
   padding: 1em;
+  animation: bounce 2s infinite;
   border-radius: 1em;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
@@ -137,4 +138,12 @@ form {
       }
     }
   }
+}
+
+//additional
+.btn-div {
+  @include flexCenter(row);
+}
+.prev-next {
+  color: $violetColor;
 }

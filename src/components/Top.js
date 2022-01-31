@@ -11,12 +11,13 @@ const Top = () => {
     );
     response.json().then((data) => {
       setLoader(false);
-      setDisplay(data.top.slice(0, 5));
+      setDisplay(data.top.slice(0, 10));
+      document.title = `NANIME | Home`;
     });
   };
   useEffect(() => {
     result();
-  }, []);
+  }, [display]);
 
   return (
     <div>

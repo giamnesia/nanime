@@ -11,6 +11,7 @@ const View = () => {
       .then((res) => res.json())
       .then((data) => {
         setAnime(data);
+        document.title = `NANIME | ${data.title ? data.title : ""}`;
       });
   }, [id]);
 
